@@ -18,6 +18,7 @@ output:
 %\VignettePackage{GEOmetadb}
 -->
 
+
 <!--
 Commenting out travis build status because it causes issues on windows,
 see 
