@@ -1,7 +1,7 @@
 Package: GEOmetadb
 Type: Package
 Title: A compilation of metadata from NCBI GEO
-Version: 1.47.1
+Version: 1.48.0
 Date: 2019-10-11
 Depends: GEOquery,RSQLite
 Suggests: knitr, rmarkdown, dplyr, tm, wordcloud
