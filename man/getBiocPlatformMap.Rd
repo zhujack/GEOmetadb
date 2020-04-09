@@ -18,14 +18,14 @@ getBiocPlatformMap(con, bioc='all')
 \references{http://meltzerlab.nci.nih.gov/apps/geo}
 \author{Jack Zhu <zhujack@mail.nih.gov>, Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
-if(file.exists('GEOmetadb.sqlite')) {
-    con <- dbConnect(SQLite(), "GEOmetadb.sqlite")
-	getBiocPlatformMap(con)[1:5,]
-	getBiocPlatformMap(con, bioc=c('hgu133a','hgu95av2'))
-	dbDisconnect(con)
-} else {
-  print("You will need to usethe getSQLiteFile() function to get a copy
-of the SQLite database file before this example will work")
-}
+## Use the demo GEOmetadb database:
+demo_sqlfile <- demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+con <- dbConnect(SQLite(), demo_sqlfile)
+getBiocPlatformMap(con)[1:5,]
+getBiocPlatformMap(con, bioc=c('hgu133a','hgu95av2'))
+dbDisconnect(con)
+	
+## Download the full GEOmetadb database:
+\dontrun{geometadbfile <- getSQLiteFile()
 }
 \keyword{ database }

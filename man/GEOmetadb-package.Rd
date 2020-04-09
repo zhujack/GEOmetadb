@@ -36,11 +36,12 @@ http://meltzerlab.nci.nih.gov/apps/geo, http://gbnci.abcc.ncifcrf.gov/geo/
 }
 \keyword{ package }
 \examples{
-if(file.exists('GEOmetadb.sqlite')) {
-  a <- columnDescriptions()[1:5,]
-  b <- geoConvert('GPL97','GSM')
-} else {
-  print("use getSQLiteFile() to get a copy of the GEOmetadb SQLite file
-and then rerun the example")
-}
+## Use the demo GEOmetadb database:
+demo_sqlfile <- demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+columnDescriptions(demo_sqlfile)[1:5,]
+a <- columnDescriptions(demo_sqlfile)[1:5,]
+b <- geoConvert('GPL96', out_type='GSM', sqlite_db_name=demo_sqlfile)
+
+## Download the full GEOmetadb database:
+\dontrun{geometadbfile <- getSQLiteFile()
 }

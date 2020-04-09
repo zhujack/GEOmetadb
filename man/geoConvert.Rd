@@ -22,12 +22,13 @@ geoConvert(in_list, out_type = c("gse", "gpl", "gsm", "gds", "smatrix"), sqlite_
 \references{http://meltzerlab.nci.nih.gov/apps/geo, http://gbnci.abcc.ncifcrf.gov/geo/}
 \author{Jack Zhu <zhujack@mail.nih.gov>}
 \examples{
-if(file.exists("GEOmetadb.sqlite")) {
-  geoConvert('GPL96',out_type='GSM')
-} else {
-  print("Run getSQLiteFile() to get a copy of the GEOmetadb SQLite file
-and then rerun the example")
-}
+## Use the demo GEOmetadb database:
+demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+rs = geoConvert('GPL96', out_type='GSM', sqlite_db_name=demo_sqlfile)
+rs[1:5, ]
+
+## Download the full GEOmetadb database:
+\dontrun{geometadbfile <- getSQLiteFile()
 }
 \keyword{IO}
 \keyword{database}

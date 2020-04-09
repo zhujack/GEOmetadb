@@ -83,9 +83,13 @@ This package does not come with a pre-installed version of the database.  This h
 library(GEOmetadb)
 ``` 
 
-The download and uncompress steps are done automatically with a single command, `getSQLiteFile`.
+The download and uncompress steps are done automatically with a single command, `getSQLiteFile`.  This production SQLite database is huge.  For demo purpose, we use a demo database file here.
 ```{r}
-if(!file.exists('GEOmetadb.sqlite')) getSQLiteFile()
+demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+
+## Download the full GEOmetadb database:
+# geometadbfile <- getSQLiteFile()
+
 ``` 
 
 The default storage location is in the current working directory and the default filename is "GEOmetadb.sqlite"; it is best to leave the name unchanged unless there is a pressing reason to change it.
@@ -93,13 +97,13 @@ The default storage location is in the current working directory and the default
 Since this SQLite file is of key importance in *GEOmetadb*, it is perhaps of some interest to know some details about the file itself.
 
 ```{r}
-file.info('GEOmetadb.sqlite')
+file.info(demo_sqlfile)
 ``` 
 
 Now, the SQLite file is available for connection.  The standard *DBI* functionality as implemented in *RSQLite* function `dbConnect` makes the connection to the database.  The `dbDisconnect` function disconnects the connection.
 
 ```{r}
-con <- dbConnect(SQLite(),'GEOmetadb.sqlite')
+con <- dbConnect(SQLite(), demo_sqlfile)
 dbDisconnect(con)
 ``` 
 
@@ -118,7 +122,7 @@ The functionality covered in this section is covered in much more detail in the 
 Again, we connect to the database.
 
 ```{r}
-con <- dbConnect(SQLite(),'GEOmetadb.sqlite')
+con <- dbConnect(SQLite(), demo_sqlfile)
 ``` 
 
 The `dbListTables` function lists all the tables in the SQLite database handled by the connection object `con`.  
@@ -195,7 +199,8 @@ Large-scale consumers of GEO data might want to convert GEO entity type from one
 Covert 'GPL96' to other possible types in the GEOmetadb.sqlite.
 
 ```{r}
-conversion <- geoConvert('GPL96')
+conversion <- geoConvert('GPL96', out_type = c("gse", "gpl", "gsm", "gds", "smatrix"), 
+    sqlite_db_name = demo_sqlfile)
 ``` 
 
 
@@ -272,7 +277,7 @@ Load the *dplyr* library and connect to the `GEOmetadb.sqlite` database.  The *d
 
 ```{r}
 library(dplyr)
-db = src_sqlite('GEOmetadb.sqlite')
+db = src_sqlite(demo_sqlfile)
 gse = tbl(db,'gse')
 filter(gse,gse=='GSE2553')
 ```
@@ -289,7 +294,7 @@ dbDisconnect(con)
 If you want to remove old  GEOmetadb.sqlite file before retrieve a new version from the server, execute the following codes:
 
 ```{r, eval=TRUE}
-file.remove('GEOmetadb.sqlite')
+# file.remove('GEOmetadb.sqlite')
 ```
 
 # sessionInfo()
