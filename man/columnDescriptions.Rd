@@ -20,11 +20,11 @@ columnDescriptions(sqlite_db_name='GEOmetadb.sqlite')
 \references{http://meltzerlab.nci.nih.gov/apps/geo}
 \author{Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
-if(file.exists('GEOmetadb.sqlite')) {
-  columnDescriptions()[1:5,]
-} else {
-  print("You will need to usethe getSQLiteFile() function to get a copy
-of the SQLite database file before this example will work")
-}
+## Use the demo GEOmetadb database:
+demo_sqlfile <- demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+columnDescriptions(demo_sqlfile)[1:5,]
+
+## Download the full GEOmetadb database:
+\dontrun{geometadbfile <- getSQLiteFile()
 }
 \keyword{ database }
