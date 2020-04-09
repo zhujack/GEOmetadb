@@ -21,7 +21,11 @@ columnDescriptions(sqlite_db_name='GEOmetadb.sqlite')
 \author{Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
 ## Use the demo GEOmetadb database:
-demo_sqlfile <- demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+if( !file.exists("GEOmetadb.sqlite") ) {
+    demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+} else {
+    demo_sqlfile <- "GEOmetadb.sqlite"
+}
 columnDescriptions(demo_sqlfile)[1:5,]
 
 ## Download the full GEOmetadb database:

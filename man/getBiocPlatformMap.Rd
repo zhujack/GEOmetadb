@@ -19,7 +19,12 @@ getBiocPlatformMap(con, bioc='all')
 \author{Jack Zhu <zhujack@mail.nih.gov>, Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
 ## Use the demo GEOmetadb database:
-demo_sqlfile <- demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+if( !file.exists("GEOmetadb.sqlite") ) {
+    demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+} else {
+    demo_sqlfile <- "GEOmetadb.sqlite"
+}
+
 con <- dbConnect(SQLite(), demo_sqlfile)
 getBiocPlatformMap(con)[1:5,]
 getBiocPlatformMap(con, bioc=c('hgu133a','hgu95av2'))
