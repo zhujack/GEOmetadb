@@ -37,7 +37,11 @@ http://meltzerlab.nci.nih.gov/apps/geo, http://gbnci.abcc.ncifcrf.gov/geo/
 \keyword{ package }
 \examples{
 ## Use the demo GEOmetadb database:
-demo_sqlfile <- demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+if( !file.exists("GEOmetadb.sqlite") ) {
+    demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+} else {
+    demo_sqlfile <- "GEOmetadb.sqlite"
+}
 columnDescriptions(demo_sqlfile)[1:5,]
 a <- columnDescriptions(demo_sqlfile)[1:5,]
 b <- geoConvert('GPL96', out_type='GSM', sqlite_db_name=demo_sqlfile)

@@ -85,7 +85,11 @@ library(GEOmetadb)
 
 The download and uncompress steps are done automatically with a single command, `getSQLiteFile`.  This production SQLite database is huge.  For demo purpose, we use a demo database file here.
 ```{r}
-demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+if( !file.exists("GEOmetadb.sqlite") ) {
+    demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+} else {
+    demo_sqlfile <- "GEOmetadb.sqlite"
+}
 
 ## Download the full GEOmetadb database:
 # geometadbfile <- getSQLiteFile()

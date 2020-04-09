@@ -25,7 +25,11 @@ getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "norma
 \author{Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
 ## Download the demo GEOmetadb database:
-demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+if( !file.exists("GEOmetadb.sqlite") ) {
+    demo_sqlfile <- getSQLiteFile(destdir = getwd(), destfile = "GEOmetadb.sqlite.gz", type = "demo")
+} else {
+    demo_sqlfile <- "GEOmetadb.sqlite"
+}
 
 ## Download the full GEOmetadb database:
 \dontrun{geometadbfile <- getSQLiteFile()
