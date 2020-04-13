@@ -36,4 +36,3 @@ head(ls[[1]])
 \dontrun{geometadbfile <- getSQLiteFile()
 }
 \keyword{IO}
-\keyword{database}

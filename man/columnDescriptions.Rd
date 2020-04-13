@@ -31,4 +31,3 @@ columnDescriptions(demo_sqlfile)[1:5,]
 ## Download the full GEOmetadb database:
 \dontrun{geometadbfile <- getSQLiteFile()
 }
-\keyword{ database }

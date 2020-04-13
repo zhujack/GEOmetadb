@@ -35,4 +35,3 @@ if( !file.exists("GEOmetadb.sqlite") ) {
 \dontrun{geometadbfile <- getSQLiteFile()
 }
 \keyword{ IO }
-\keyword{ database }
