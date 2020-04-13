@@ -33,4 +33,3 @@ dbDisconnect(con)
 ## Download the full GEOmetadb database:
 \dontrun{geometadbfile <- getSQLiteFile()
 }
-\keyword{ database }
