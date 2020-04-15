@@ -35,4 +35,4 @@ head(ls[[1]])
 ## Download the full GEOmetadb database:
 \dontrun{geometadbfile <- getSQLiteFile()
 }
-\keyword{IO}
+}

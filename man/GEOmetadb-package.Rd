@@ -49,3 +49,4 @@ b <- geoConvert('GPL96', out_type='GSM', sqlite_db_name=demo_sqlfile)
 ## Download the full GEOmetadb database:
 \dontrun{geometadbfile <- getSQLiteFile()
 }
+}

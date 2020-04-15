@@ -34,4 +34,4 @@ if( !file.exists("GEOmetadb.sqlite") ) {
 ## Download the full GEOmetadb database:
 \dontrun{geometadbfile <- getSQLiteFile()
 }
-\keyword{ IO }
+}
