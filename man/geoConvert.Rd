@@ -19,7 +19,6 @@ geoConvert(in_list, out_type = c("gse", "gpl", "gsm", "gds", "smatrix"), sqlite_
   A list of data.frames.
   
 }
-\references{http://meltzerlab.nci.nih.gov/apps/geo, http://gbnci.abcc.ncifcrf.gov/geo/}
 \author{Jack Zhu <zhujack@mail.nih.gov>}
 \examples{
 ## Use the demo GEOmetadb database:

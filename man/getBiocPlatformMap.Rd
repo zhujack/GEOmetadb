@@ -15,7 +15,6 @@ getBiocPlatformMap(con, bioc='all')
 \value{
   A six-column data.frame including GPL title, GPL accession, bioc_package, manufacturer, organism, data_row_count.
 }
-\references{http://meltzerlab.nci.nih.gov/apps/geo}
 \author{Jack Zhu <zhujack@mail.nih.gov>, Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
 ## Use the demo GEOmetadb database:

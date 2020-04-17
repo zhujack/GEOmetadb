@@ -31,9 +31,6 @@ Jack Zhu and Sean Davis
 
 Maintainer: Jack Zhu <zhujack@mail.nih.gov>
 }
-\references{
-http://meltzerlab.nci.nih.gov/apps/geo, http://gbnci.abcc.ncifcrf.gov/geo/
-}
 \keyword{ package }
 \examples{
 ## Use the demo GEOmetadb database:

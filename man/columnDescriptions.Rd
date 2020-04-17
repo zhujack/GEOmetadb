@@ -17,7 +17,6 @@ columnDescriptions(sqlite_db_name='GEOmetadb.sqlite')
 \value{
   A three-column data.frame including TableName, FieldName, and Description.
 }
-\references{http://meltzerlab.nci.nih.gov/apps/geo}
 \author{Sean Davis <sdavis2@mail.nih.gov>}
 \examples{
 ## Use the demo GEOmetadb database:
