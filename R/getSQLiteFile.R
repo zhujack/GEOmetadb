@@ -2,9 +2,9 @@ getSQLiteFile <-
 function(destdir=getwd(),destfile='GEOmetadb.sqlite.gz',type='full') {
   localfile <- file.path(destdir,destfile)
   if(type == 'full') {
-      url_geo = "http://starbuck1.s3.amazonaws.com/sradb/GEOmetadb.sqlite.gz"
+      url_geo = "https://gbnci.cancer.gov/geo/GEOmetadb.sqlite.gz"
   } else {
-      url_geo = "http://starbuck1.s3.amazonaws.com/sradb/GEOmetadb_demo.sqlite.gz"
+      url_geo = "https://gbnci.cancer.gov/geo/GEOmetadb_demo.sqlite.gz"
   }
   
 
