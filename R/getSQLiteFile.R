@@ -4,7 +4,7 @@ function(destdir=getwd(),destfile='GEOmetadb.sqlite.gz',type='full') {
   if(type == 'full') {
       url_geo = "https://gbnci.cancer.gov/geo/GEOmetadb.sqlite.gz"
   } else {
-      url_geo = "http://gbnci.cancer.gov/geo/GEOmetadb_demo.sqlite.gz"
+      url_geo = "https://gbnci.cancer.gov/geo/GEOmetadb_demo.sqlite.gz"
   }
   
 
