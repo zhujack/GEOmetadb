@@ -81,6 +81,7 @@ This package does not come with a pre-installed version of the database.  This h
 
 ```{r}
 library(GEOmetadb)
+library(dbplyr)
 ``` 
 
 The download and uncompress steps are done automatically with a single command, `getSQLiteFile`.  This production SQLite database is huge.  For demo purpose, we use a demo database file here.
