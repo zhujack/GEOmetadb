@@ -2,8 +2,8 @@ Package: GEOmetadb
 Type: Package
 Title: A compilation of metadata from NCBI GEO
 Version: 1.68.0
-Date: 2023-10-22
-Depends: GEOquery,RSQLite
+Date: 2024-12-03
+Depends: R.utils,RSQLite
 Suggests: knitr, rmarkdown, dplyr, dbplyr, tm, wordcloud
 Author: Jack Zhu and Sean Davis
 Maintainer: Jack Zhu <zhujack@mail.nih.gov>
